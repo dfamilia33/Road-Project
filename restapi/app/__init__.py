@@ -7,6 +7,7 @@ from flask_migrate import Migrate
 from app.resources.home import Home
 
 
+
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
 
@@ -26,6 +27,7 @@ jwt = JWTManager(app)
 
 
 from app.resources.user import UserRegister, UserLogin, UserLogout, TokenRefresh
+from app.resources.dmv import DMVbasicinfo
 from app.models.user import UserModel #has to be after db decalred since using it
 from app.models.dmv import DMVModel
 from app.models.instructors import InstructorModel
@@ -96,7 +98,7 @@ api.add_resource(UserRegister, '/register')
 api.add_resource(UserLogin, '/login')
 api.add_resource(UserLogout,'/logout')
 api.add_resource(TokenRefresh, '/refresh')
-
+api.add_resource(DMVbasicinfo, '/DMVinfo')
 
 
 

@@ -9,3 +9,5 @@ class ReviewModel(db.Model):
 	upvotes = db.Column(db.Integer)
 	downvotes = db.Column(db.Integer)
 	timestamp = db.Column(db.String(120))
+	dmv_id = db.Column(db.Integer, db.ForeignKey('dmv.id'), nullable=False)
+	

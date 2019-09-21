@@ -8,3 +8,6 @@ class DMVModel(db.Model):
 	rating = db.Column(db.Integer)
 	instructors = db.relationship('InstructorModel', backref='dmv', lazy=True)
 	reviews = db.relationship('ReviewModel', backref='dmv', lazy=True)
+
+	def __repr__(self):
+		return '<DMV %r>' % self.name
