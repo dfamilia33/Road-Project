@@ -28,6 +28,7 @@ jwt = JWTManager(app)
 
 from app.resources.user import UserRegister, UserLogin, UserLogout, TokenRefresh
 from app.resources.dmv import DMVbasicinfo
+from app.resources.instructors import InstructorsList
 from app.models.user import UserModel #has to be after db decalred since using it
 from app.models.dmv import DMVModel
 from app.models.instructors import InstructorModel
@@ -99,6 +100,7 @@ api.add_resource(UserLogin, '/login')
 api.add_resource(UserLogout,'/logout')
 api.add_resource(TokenRefresh, '/refresh')
 api.add_resource(DMVbasicinfo, '/DMVinfo')
+api.add_resource(InstructorsList, '/Instructors')
 
 
 

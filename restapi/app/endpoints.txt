@@ -7,3 +7,10 @@
 			404 - Entered an invalid Id number
 
 	{{url}}/login
+
+	{{url}}/Instructors
+		- Arguments
+			'_id' - required, must be an int type
+		Status Codes
+			200 - good
+			404 - Entered an invalid Id number
