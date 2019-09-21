@@ -29,6 +29,7 @@ from app.resources.user import UserRegister, UserLogin, UserLogout, TokenRefresh
 from app.models.user import UserModel #has to be after db decalred since using it
 from app.models.dmv import DMVModel
 from app.models.instructors import InstructorModel
+from app.models.reviews import ReviewModel
 
 """
 `claims` are data we choose to attach to each jwt payload
