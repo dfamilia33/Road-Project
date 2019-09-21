@@ -27,6 +27,7 @@ jwt = JWTManager(app)
 
 from app.resources.user import UserRegister, UserLogin, UserLogout, TokenRefresh
 from app.models.user import UserModel #has to be after db decalred since using it
+from app.models.dmv import DMVModel
 
 """
 `claims` are data we choose to attach to each jwt payload
