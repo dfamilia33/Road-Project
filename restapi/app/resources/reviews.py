@@ -19,11 +19,6 @@ class ReviewList(Resource):
 
 	def get(self,_id):
 
-
-		
-		
-
-
 		reviews = DMVModel.query.get(_id).reviews
 
 		resultlist = dict()
@@ -63,6 +58,19 @@ class ReviewList(Resource):
 		db.session.commit()
 
 		return {"message": "Review created successfully."}, 201
+
+	@jwt_required
+	def delete(self,_id):
+
+		ident = get_jwt_identity()
+
+		if ident == ReviewModel.query.get(_id).user_id:
+			db.session.delete(ReviewModel.query.get(_id))
+			db.session.commit()
+			return {"message":"successfully deleted"}
+
+		return {"message":"Unauthorized: Not your comment"}, 401
+
 
 
 		
