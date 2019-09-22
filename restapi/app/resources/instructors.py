@@ -4,19 +4,13 @@ from flask_restful import Resource, reqparse
 from app.models.dmv import DMVModel
 from app.models.instructors import InstructorModel
 
-_ins_parser = reqparse.RequestParser()
-_ins_parser.add_argument('_id',
-                          type=int,
-                          required=True,
-                          help="This field cannot be blank."
-                          )
+
 
 class InstructorsList(Resource):
-	def get(self):
+	def get(self,_id):
 
 		try:
-			data = _ins_parser.parse_args()
-			instructors = DMVModel.query.get(data['_id']).instructors
+			instructors = DMVModel.query.get(_id).instructors
 
 			resultlist = dict()
 

@@ -100,9 +100,12 @@ api.add_resource(UserRegister, '/register')
 api.add_resource(UserLogin, '/login')
 api.add_resource(UserLogout,'/logout')
 api.add_resource(TokenRefresh, '/refresh')
-api.add_resource(DMVbasicinfo, '/DMVinfo')
-api.add_resource(InstructorsList, '/Instructors')
-api.add_resource(ReviewList, '/Reviews')
+api.add_resource(DMVbasicinfo, '/DMVinfo/<_id>')
+
+api.add_resource(InstructorsList, '/Instructors/<_id>')
+
+
+api.add_resource(ReviewList, '/Reviews/<_id>')
 
 
 

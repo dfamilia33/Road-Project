@@ -8,28 +8,23 @@ from app.models.user import UserModel
 
 _rev_parser = reqparse.RequestParser()
 
-_rev_parser.add_argument('_id',
-				type=int,
-				required=True,
-				help="This field cannot be blank."
-				)
 
 def check_duplicate(dmvid,ident):
-	if len(ReviewModel.query.filter_by(user_id=ident, dmv_id=dmvid).all()) > 1:
+	if len(ReviewModel.query.filter_by(user_id=ident, dmv_id=dmvid).all()) > 0:
 		return True
 	return False
 
 
 class ReviewList(Resource):
 
-	def get(self):
+	def get(self,_id):
 
 
 		
 		
-		data = _rev_parser.parse_args()
 
-		reviews = DMVModel.query.get(data['_id']).reviews
+
+		reviews = DMVModel.query.get(_id).reviews
 
 		resultlist = dict()
 
@@ -43,7 +38,7 @@ class ReviewList(Resource):
 		return {"message": "Invalid Id!"}, 404
 
 	@jwt_required
-	def post(self):
+	def post(self,_id):
 		_rev_parser.add_argument('comment',
 				required=True,
 				help="This field cannot be blank."
@@ -53,7 +48,7 @@ class ReviewList(Resource):
 
 		ident = get_jwt_identity()
 
-		if check_duplicate(data['_id'], ident):
+		if check_duplicate(_id, ident):
 			return {"message": "Error: Attempted to place a review twice"}, 403
 
 		review = ReviewModel()
@@ -62,7 +57,7 @@ class ReviewList(Resource):
 		review.user_id = ident
 		review.author = UserModel.query.get(ident).username
 		review.comment = data['comment']
-		review.dmv_id = data['_id']
+		review.dmv_id = _id
 
 		db.session.add(review)
 		db.session.commit()
