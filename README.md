@@ -1,21 +1,16 @@
-# Flask-RESTFUL-Boilerplate
+# Roadmate
 
-This is a flask rest api boiler plate with authentication and User models.  
-Tested with Postman  
+This is a Rest API in the Flask Framework to service the app Roadmate. This is meant to help student drivers pass the road exam
+by providing routes, instructor details, location information details etc.
 
-Main Extensions Include:  
+Technologies:  
 * Flask
 * Flask-JWT-Extended
-* Flask-Migrate
 * Flask-RESTful
 * Flask-SQLAlchemy
-* SQLAlchemy
+* PostgreSQL/Sqlite
 
-inspired from https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world  
-and           https://github.com/tecladocode/flask-jwt-extended-section-lectures  
+Made at Big Red Hacks 2020 @ Cornell University
 
-File Path: /mnt/c/users/famild/Documents/Github/Flask-RESTFUL-Boilerplate  
-Notes:  
-Migrations directory set up  
-Sqlite db set up with example example credenitals  
-Venv set up locally  
+Backend Rest API designed by Daniel Familia.
+Front End React App designed by Kevin Cruz.
