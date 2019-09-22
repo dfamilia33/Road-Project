@@ -26,7 +26,7 @@ api = Api(app)
 jwt = JWTManager(app)
 
 
-from app.resources.user import UserRegister, UserLogin, UserLogout, TokenRefresh
+from app.resources.user import UserRegister, UserLogin, UserLogout, TokenRefresh,UserInfo
 from app.resources.dmv import DMVbasicinfo
 from app.resources.reviews import ReviewList
 from app.resources.instructors import InstructorsList
@@ -106,6 +106,7 @@ api.add_resource(InstructorsList, '/Instructors/<_id>')
 
 
 api.add_resource(ReviewList, '/Reviews/<_id>')
+api.add_resource(UserInfo, '/user')
 
 
 

@@ -26,7 +26,7 @@ class ReviewList(Resource):
 		for i in range(len(reviews)):
 			curr_revs = reviews[i]
 			resultlist["instructor" + str(i+1)] = {"comment":curr_revs.comment, "upvotes":curr_revs.upvotes, "downvotes":curr_revs.downvotes,
-			"time":curr_revs.timestamp, "dmv_id" :curr_revs.dmv_id, "author" :curr_revs.author}
+			"time":curr_revs.timestamp, "dmv_id" :curr_revs.dmv_id, "author" :curr_revs.author,"user_id":user_id}
 
 		return resultlist
 	
