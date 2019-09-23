@@ -16,4 +16,5 @@ Backend Rest API designed by Daniel Familia.
 Front End React App designed by Kevin Cruz.
 
 Screenshot: 
+
 ![Screenshot](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/848/002/datas/gallery.jpg)
